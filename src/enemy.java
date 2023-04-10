@@ -18,6 +18,8 @@ import java.awt.*;
 		public Image pic;
 		public int hits;
 
+		public boolean isIntersecting;
+
 		// METHOD DEFINITION SECTION
 
 		//This is a constructor that takes 3 parameters.  This allows us to specify the object's name and position when we build it.

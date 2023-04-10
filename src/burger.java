@@ -12,7 +12,8 @@ public class burger {
     public int ypos;                //the y position
     public int width;
     public int height;
-    public boolean isAlive;            //a boolean to denote if the hero is alive or dead.
+    public boolean isAlive;//a boolean to denote if the hero is alive or dead.
+    public boolean isIntersecting;
     public int dx;                    //the speed of the hero in the x direction
     public int dy;                    //the speed of the hero in the y direction
     public Rectangle rec;
@@ -25,10 +26,10 @@ public class burger {
     // if you put in a String, an int and an int the program will use this constructor instead of the one above.
     public burger(int pXpos, int pYpos) {
 
-        xpos = pXpos;
-        ypos = pYpos;
-        width = 50;
-        height = 50;
+        xpos =(int)(Math.random()*600);
+        ypos = (int)(Math.random()*425);
+        width = 25;
+        height = 25;
         dx = 5;
         dy = -5;
         isAlive = true;
