@@ -137,7 +137,7 @@ public class videoGame implements Runnable, KeyListener {
     // this is the code that plays the game after you set things up
     public void moveThings() {
         plankton.move();
-        krabbyPatty.move();
+        krabbyPatty.wrap();
         spongeBob.move();
         gary.move();
         dirtyBubble.move();
@@ -151,7 +151,7 @@ public class videoGame implements Runnable, KeyListener {
         }
 
         for (int i = 0; i < krabbyPattyArray.length; i++) {
-            krabbyPattyArray[i].move();
+            krabbyPattyArray[i].wrap();
         }
 
         for (int i = 0; i < dirtyBubbleArray.length; i++) {
@@ -336,6 +336,10 @@ public class videoGame implements Runnable, KeyListener {
 
                 for (int i = 0; i < garyArray.length; i++) {
                     g.drawImage(garyArray[i].pic, garyArray[i].xpos, garyArray[i].ypos, garyArray[i].width, garyArray[i].height, null);
+                }
+
+                for (int i = 0; i < dirtyBubbleArray.length; i++) {
+                    g.drawImage(dirtyBubbleArray[i].pic, dirtyBubbleArray[i].xpos, dirtyBubbleArray[i].ypos, dirtyBubbleArray[i].width, dirtyBubbleArray[i].height, null);
                 }
 
                 for (int i = 0; i < krabbyPattyArray.length; i++) {

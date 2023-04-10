@@ -74,6 +74,28 @@ public class burger {
 
     }
 
+    public void wrap(){
+
+        xpos = xpos + dx;
+        ypos = ypos + dy;
+
+
+        if (xpos>1000) {
+            xpos =0;}
+
+        if (xpos<0){
+            xpos=1000;}
+
+        if (ypos>600){
+            ypos = 0;
+        }
+        if (ypos<0){
+            ypos = 600;
+        }
+        rec = new Rectangle(xpos, ypos, width, height);
+
+    }
+
 
 } //end of the Burger object class  definition
 
