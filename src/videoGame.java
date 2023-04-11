@@ -80,7 +80,7 @@ public class videoGame implements Runnable, KeyListener {
 
         //load images
         background = Toolkit.getDefaultToolkit().getImage("BikiniBottom.jpeg");
-        gameover = Toolkit.getDefaultToolkit().getImage("Gameover.png");
+        gameover = Toolkit.getDefaultToolkit().getImage("Gameover2.png");
         burgerPic = Toolkit.getDefaultToolkit().getImage("krabbyPatty.png");
         planktonPic = Toolkit.getDefaultToolkit().getImage("Plankton.png");
         spongebobPic = Toolkit.getDefaultToolkit().getImage("spongebob.png");
@@ -90,7 +90,7 @@ public class videoGame implements Runnable, KeyListener {
 
         //create (construct) the objects needed for the game
         plankton = new enemy(250, 300, 4, 4, planktonPic);
-        krabbyPatty = new burger(400, 300, 1, -4, burgerPic);
+        krabbyPatty = new burger(400, 300, 1, 1, burgerPic);
         spongeBob = new Player(850, 75, 0, 0, spongebobPic);
         gary = new powerup(100, 325, 2, 5, garyPic);
         dirtyBubble = new powerdown(500, 250, 3, 7, dirtyBubblePic);
@@ -100,30 +100,30 @@ public class videoGame implements Runnable, KeyListener {
         planktonArray = new enemy[3];
 
         for (int i = 0; i < planktonArray.length; i++) {
-            planktonArray[i] = new enemy((int) (Math.random() * 800), (int) (Math.random() * 600), 8, 8, planktonPic);
+            planktonArray[i] = new enemy((int) (800), (int) ( 600), 5, 4, planktonPic);
         }
 
         garyArray = new powerup[3];
 
         for (int i = 0; i < garyArray.length; i++) {
-            garyArray[i] = new powerup((int) (Math.random() * 700), (int) (Math.random() * 500), 12, 12, garyPic);
+            garyArray[i] = new powerup((int) (Math.random() * 700), (int) (Math.random() * 500), 3, 3, garyPic);
         }
 
-        krabbyPattyArray = new burger[10];
+        krabbyPattyArray = new burger[25];
 
         for (int i = 0; i < krabbyPattyArray.length; i++) {
-            krabbyPattyArray[i] = new burger((int) (Math.random() * 600), (int) (Math.random() * 365), 9, 4, krabbyPatty.pic);
+            krabbyPattyArray[i] = new burger((int) (Math.random() * 600), (int) (Math.random() * 365), 2, 2, krabbyPatty.pic);
         }
 
         dirtyBubbleArray = new powerdown[5];
 
         for (int i = 0; i < dirtyBubbleArray.length; i++) {
-            dirtyBubbleArray[i] = new powerdown((int) (Math.random() * 800), (int) (Math.random() * 564), 11, 11, dirtyBubble.pic);
+            dirtyBubbleArray[i] = new powerdown((int) (Math.random() * 800), (int) (Math.random() * 564), 4, 4, dirtyBubble.pic);
         }
 
         manRayArray = new enemy[2];
         for (int i = 0; i < manRayArray.length; i++) {
-            manRayArray[i] = new enemy((int) (Math.random() * 200), (int) (Math.random() * 185), 14, 14, manRay.pic);
+            manRayArray[i] = new enemy((int) (Math.random() * 200), (int) (Math.random() * 185), 12, 12, manRay.pic);
         }
 
 
@@ -196,6 +196,7 @@ public class videoGame implements Runnable, KeyListener {
             if (spongeBob.rec.intersects(manRayArray[i].rec) && manRayArray[i].isIntersecting == false) {
                 manRayArray[i].isIntersecting = true;
                 spongeBob.isAlive = false;
+                isgameover = true;
                 spongeBob.dx = 0;
                 spongeBob.dy = 0;
                 spongeBob.xpos = 5000;
@@ -319,6 +320,10 @@ public class videoGame implements Runnable, KeyListener {
             if (isgameover == true){
 
                 g.drawImage(gameover, 0, 0, 1000, 660, null);
+
+                g.setFont(new Font("TimesRoman", Font.BOLD, 20));
+                g.setColor(Color.black);
+                g.drawString("SCORE " + score, 450, 375);
             } else {
 
 

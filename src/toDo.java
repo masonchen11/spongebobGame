@@ -3,10 +3,9 @@ public class toDo {}
    /**
 
     LIST
-    1. Some of my items don't appear on screen; they're invisible
-    2. Maybe want items to fly in and out of screen rather than having them bounce. Remove clumps of items.
-    3. Game over screen
-    4. Smaller hit boxes?
+    1. Make starting restrictions for items and spongebob
+    2. Remove clumps of items.
+    3. Make krabby Patty move slower and
 
     *
 Start Spongebob in middle of screen and have items fly into the screen.

@@ -44,10 +44,10 @@ public class burger {
 
         xpos = pXpos;
         ypos = pYpos;
-        width = 50;
-        height = 50;
-        dx = dxParameter;
-        dy = dyParameter;
+        width = 30;
+        height = 30;
+        dx = ((int)(Math.random()*5));
+        dy = ((int)(Math.random()*5));
         pic = picParameter;
         isAlive = true;
         hits = 0;
@@ -59,8 +59,8 @@ public class burger {
 
     //The move method.  Everytime this is run (or "called") the hero's x position and y position change by dx and dy
     public void move() {
-        xpos = xpos + dx;
-        ypos = ypos + dy;
+        xpos = xpos + ((int) (Math.random()*5));
+        ypos = ypos + ((int) (Math.random()*5));
 
         if (xpos > 1000 - width || xpos < 0) {
             dx = -dx;
