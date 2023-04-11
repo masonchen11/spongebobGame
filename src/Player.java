@@ -33,7 +33,7 @@ public class Player {
         dy = dyParameter;
         pic = picParameter;
         isAlive = true;
-        rec = new Rectangle(xpos, ypos, width, height);
+        rec = new Rectangle(xpos+17, ypos, width-25, height);
 
     } // constructor
 
@@ -73,7 +73,7 @@ public class Player {
 
 
         //always put this after you've done all the changing of the xpos and ypos values
-        rec = new Rectangle(xpos, ypos, width, height);
+        rec = new Rectangle(xpos+17, ypos, width-25, height);
 
     }
 

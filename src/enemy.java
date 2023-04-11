@@ -24,7 +24,7 @@ import java.awt.*;
 
 		//This is a constructor that takes 3 parameters.  This allows us to specify the object's name and position when we build it.
 		// if you put in a String, an int and an int the program will use this constructor instead of the one above.
-		public enemy(int pXpos, int pYpos) {
+		public enemy(int pXpos,int pYpos) {
 
 			xpos = pXpos;
 			ypos = pYpos;
@@ -34,7 +34,7 @@ import java.awt.*;
 			dy = -5;
 			isAlive = true;
 			hits = 0;
-			rec = new Rectangle(xpos, ypos, width, height);
+			rec = new Rectangle(xpos+15, ypos, width/2, height);
 
 
 		} // constructor
@@ -51,7 +51,7 @@ import java.awt.*;
 			pic = picParameter;
 			isAlive = true;
 			hits = 0;
-			rec = new Rectangle(xpos, ypos, width, height);
+			rec = new Rectangle(xpos+25, ypos, width/2, height);
 
 
 		} // constructor
@@ -70,7 +70,7 @@ import java.awt.*;
 				dy = -dy;
 			}
 
-			rec = new Rectangle(xpos, ypos, width, height);
+			rec = new Rectangle(xpos+25, ypos, width/2, height);
 
 		}
 
